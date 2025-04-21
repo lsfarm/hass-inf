@@ -5,7 +5,7 @@
   [HA Thread](https://community.home-assistant.io/t/carrier-bryant-infinitive-integration/119578/22)
 
 ```
-wget -O infinitive https://github.com/acd/infinitive/releases/download/v0.2/infinitive.arm/clipboard-copy-element
+wget -O infinitive https://github.com/acd/infinitive/releases/download/v0.2/infinitive.arm
 ```
 ```
 chmod +x infinitive
