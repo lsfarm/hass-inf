@@ -7,8 +7,12 @@
 ```
 wget -O infinitive https://github.com/acd/infinitive/releases/download/v0.2/infinitive.arm/clipboard-copy-element
 ```
-pi@hvactest4:~ $ chmod +x infinitive
-pi@hvactest4:~ $ ls -lha infinitive
+```
+chmod +x infinitive
+```
+```
+ls -lha infinitive
+```
 ```
 ./infinitive -httpport=8080 -serial=/dev/ttyACM0
 ```
