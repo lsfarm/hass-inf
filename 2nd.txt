@@ -1,0 +1,373 @@
+login as: pi
+pi@10.10.10.99's password:
+Linux hvactest 6.6.51+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.6.51-1+rpt3 (2024-1                                                                                                                     0-08) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Mon Apr 21 03:02:32 2025
+pi@hvactest:~ $ systemctl status infinitive
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: e>
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21>
+    Process: 6576 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev>
+   Main PID: 6576 (code=exited, status=2)
+        CPU: 11ms
+
+Apr 21 03:22:54 hvactest systemd[1]: infinitive.service: Scheduled restart job,>
+Apr 21 03:22:54 hvactest systemd[1]: Stopped infinitive.service - Infinitive Se>
+lines 1-9/9 (END)...skipping...
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21 03:22:53 BST; 1s ago
+    Process: 6576 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0 (code=exited, status=2)
+   Main PID: 6576 (code=exited, status=2)
+        CPU: 11ms
+
+Apr 21 03:22:54 hvactest systemd[1]: infinitive.service: Scheduled restart job, restart counter is at 796.
+Apr 21 03:22:54 hvactest systemd[1]: Stopped infinitive.service - Infinitive Service.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+lines 1-9/9 (END)
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: e>
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21>
+    Process: 6576 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev>
+   Main PID: 6576 (code=exited, status=2)
+        CPU: 11ms
+
+Apr 21 03:22:54 hvactest systemd[1]: infinitive.service: Scheduled restart job,>
+Apr 21 03:22:54 hvactest systemd[1]: Stopped infinitive.service - Infinitive Se>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+lines 1-9/9 (END)
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21 03:22:53 BST; 1s ago
+    Process: 6576 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0 (code=exited, status=2)
+   Main PID: 6576 (code=exited, status=2)
+        CPU: 11ms
+
+Apr 21 03:22:54 hvactest systemd[1]: infinitive.service: Scheduled restart job, restart counter is at 796.
+Apr 21 03:22:54 hvactest systemd[1]: Stopped infinitive.service - Infinitive Service.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOD
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21 03:22:53 BST; 1s ago
+    Process: 6576 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0 (code=exited, status=2)
+   Main PID: 6576 (code=exited, status=2)
+        CPU: 11ms
+
+Apr 21 03:22:54 hvactest systemd[1]: infinitive.service: Scheduled restart job, restart counter is at 796.
+Apr 21 03:22:54 hvactest systemd[1]: Stopped infinitive.service - Infinitive Service.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOD
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21 03:22:53 BST; 1s ago
+    Process: 6576 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0 (code=exited, status=2)
+   Main PID: 6576 (code=exited, status=2)
+        CPU: 11ms
+
+Apr 21 03:22:54 hvactest systemd[1]: infinitive.service: Scheduled restart job, restart counter is at 796.
+Apr 21 03:22:54 hvactest systemd[1]: Stopped infinitive.service - Infinitive Service.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+pi@hvactest:~ $ systemctl status infinitive
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21 03:24:38 BST; 756ms ago
+    Process: 7085 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0 (code=exited, status=2)
+   Main PID: 7085 (code=exited, status=2)
+        CPU: 11ms
+pi@hvactest:~ $ cd
+pi@hvactest:~ $ systemctl status infinitive
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21 03:25:07 BST; 1s ago
+    Process: 7225 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0 (code=exited, status=2)
+   Main PID: 7225 (code=exited, status=2)
+        CPU: 11ms
+pi@hvactest:~ $ cd /dev/
+pi@hvactest:/dev $ ls
+autofs           disk        gpiochip4  kmsg   loop-control  null   ram12  ram9        stdin   tty16  tty26  tty36  tty46  tty56  tty9       vcs1   vcsa4  vcsu7        video25  watchdog
+block            dma_heap    gpiomem0   kvm    mapper        port   ram13  random      stdout  tty17  tty27  tty37  tty47  tty57  ttyACM0    vcs2   vcsa5  vga_arbiter  video26  watchdog0
+btrfs-control    dri         gpiomem1   log    media0        ppp    ram14  rfkill      tty     tty18  tty28  tty38  tty48  tty58  ttyAMA10   vcs3   vcsa6  vhci         video27  zero
+bus              fd          gpiomem2   loop0  media1        pps0   ram15  rtc         tty0    tty19  tty29  tty39  tty49  tty59  ttyprintk  vcs4   vcsa7  vhost-net    video28
+cachefiles       full        gpiomem3   loop1  media2        ptmx   ram2   rtc0        tty1    tty2   tty3   tty4   tty5   tty6   uhid       vcs5   vcsu   vhost-vsock  video29
+cec0             fuse        gpiomem4   loop2  mem           ptp0   ram3   serial      tty10   tty20  tty30  tty40  tty50  tty60  uinput     vcs6   vcsu1  video19      video30
+cec1             gpiochip0   hwrng      loop3  mmcblk0       pts    ram4   serial0     tty11   tty21  tty31  tty41  tty51  tty61  urandom    vcs7   vcsu2  video20      video31
+char             gpiochip10  i2c-11     loop4  mmcblk0p1     ram0   ram5   shm         tty12   tty22  tty32  tty42  tty52  tty62  v4l        vcsa   vcsu3  video21      video32
+console          gpiochip11  i2c-12     loop5  mmcblk0p2     ram1   ram6   snd         tty13   tty23  tty33  tty43  tty53  tty63  vcio       vcsa1  vcsu4  video22      video33
+cpu_dma_latency  gpiochip12  initctl    loop6  mqueue        ram10  ram7   spidev10.0  tty14   tty24  tty34  tty44  tty54  tty7   vc-mem     vcsa2  vcsu5  video23      video34
+cuse             gpiochip13  input      loop7  net           ram11  ram8   stderr      tty15   tty25  tty35  tty45  tty55  tty8   vcs        vcsa3  vcsu6  video24      video35
+pi@hvactest:/dev $ lsusb
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 002: ID 1a86:55d3 QinHeng Electronics USB Single Serial
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+pi@hvactest:/dev $ cd
+pi@hvactest:~ $ sudo bash
+root@hvactest:/home/pi# cd
+root@hvactest:~# systemctl daemon-reload
+root@hvactest:~# systemctl status infinitive
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: active (running) since Mon 2025-04-21 03:29:05 BST; 4ms ago
+   Main PID: 8406 (infinitive)
+      Tasks: 1 (limit: 9257)
+        CPU: 0
+     CGroup: /system.slice/infinitive.service
+             └─8406 /root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0
+
+Apr 21 03:29:05 hvactest systemd[1]: Started infinitive.service - Infinitive Service.
+root@hvactest:~# systemctl enable infinitive.service
+root@hvactest:~# systemctl status infinitive
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: active (running) since Mon 2025-04-21 03:30:39 BST; 7ms ago
+   Main PID: 8882 (infinitive)
+      Tasks: 6 (limit: 9257)
+        CPU: 4ms
+     CGroup: /system.slice/infinitive.service
+             └─8882 /root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0
+
+Apr 21 03:30:39 hvactest systemd[1]: Started infinitive.service - Infinitive Service.
+root@hvactest:~# systemctl status infinitive
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21 03:30:45 BST; 644ms ago
+    Process: 8914 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0 (code=exited, status=2)
+   Main PID: 8914 (code=exited, status=2)
+        CPU: 11ms
+root@hvactest:~# systemctl status infinitive
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21 03:31:00 BST; 288ms ago
+    Process: 8988 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0 (code=exited, status=2)
+   Main PID: 8988 (code=exited, status=2)
+        CPU: 11ms
+root@hvactest:~# systemctl start infinitive.service
+root@hvactest:~# systemctl status infinitive
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: active (running) since Mon 2025-04-21 03:31:33 BST; 3ms ago
+   Main PID: 9153 (infinitive)
+      Tasks: 1 (limit: 9257)
+        CPU: 0
+     CGroup: /system.slice/infinitive.service
+             └─9153 /root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0
+
+Apr 21 03:31:33 hvactest systemd[1]: Started infinitive.service - Infinitive Service.
+root@hvactest:~# systemctl status infinitive
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21 03:34:11 BST; 197ms ago
+    Process: 9921 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0 (code=exited, status=2)
+   Main PID: 9921 (code=exited, status=2)
+        CPU: 12ms
+root@hvactest:~# systemctl status infinitive
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21 03:34:38 BST; 920ms ago
+    Process: 10049 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0 (code=exited, status=2)
+   Main PID: 10049 (code=exited, status=2)
+        CPU: 11ms
+root@hvactest:~# systemctl status infinitive
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21 03:38:38 BST; 818ms ago
+    Process: 11212 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0 (code=exited, status=2)
+   Main PID: 11212 (code=exited, status=2)
+        CPU: 12ms
+root@hvactest:~# systemctl daemon-reload
+root@hvactest:~# systemctl status infinitive
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21 03:39:25 BST; 364ms ago
+    Process: 11461 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0 (code=exited, status=2)
+   Main PID: 11461 (code=exited, status=2)
+        CPU: 12ms
+
+Apr 21 03:39:25 hvactest systemd[1]: infinitive.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+Apr 21 03:39:25 hvactest systemd[1]: infinitive.service: Failed with result 'exit-code'.

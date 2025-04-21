@@ -1,0 +1,163 @@
+login as: pi
+pi@10.10.10.99's password:
+Linux hvactest 6.6.51+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.6.51-1+rpt3 (2024-1                                                                                                                     0-08) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Mon Apr 21 01:58:43 2025
+pi@hvactest:~ $ sudo bash
+root@hvactest:/home/pi# cd
+root@hvactest:~# apt install git wget
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+git is already the newest version (1:2.39.5-0+deb12u2).
+The following packages will be upgraded:
+  wget
+1 upgraded, 0 newly installed, 0 to remove and 100 not upgraded.
+Need to get 922 kB of archives.
+After this operation, 69.6 kB disk space will be freed.
+Do you want to continue? [Y/n] y
+Get:1 http://deb.debian.org/debian bookworm/main arm64 wget arm64 1.21.3-1+deb12                                                                                                                     u1 [922 kB]
+Fetched 922 kB in 0s (2,846 kB/s)
+Reading changelogs... Done
+(Reading database ... 128932 files and directories currently installed.)
+Preparing to unpack .../wget_1.21.3-1+deb12u1_arm64.deb ...
+Unpacking wget (1.21.3-1+deb12u1) over (1.21.3-1+b1) ...
+Setting up wget (1.21.3-1+deb12u1) ...
+Processing triggers for man-db (2.11.2-2) ...
+root@hvactest:~# wget https://go.dev/dl/go1.24.2.linux-arm64.tar.gz
+--2025-04-21 02:24:35--  https://go.dev/dl/go1.24.2.linux-arm64.tar.gz
+Resolving go.dev (go.dev)... 216.239.34.21, 216.239.36.21, 216.239.38.21, ...
+Connecting to go.dev (go.dev)|216.239.34.21|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://dl.google.com/go/go1.24.2.linux-arm64.tar.gz [following]
+--2025-04-21 02:24:35--  https://dl.google.com/go/go1.24.2.linux-arm64.tar.gz
+Resolving dl.google.com (dl.google.com)... 142.250.115.136, 142.250.115.91, 142.                                                                                                                     250.115.190, ...
+Connecting to dl.google.com (dl.google.com)|142.250.115.136|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 74762151 (71M) [application/x-gzip]
+Saving to: ‘go1.24.2.linux-arm64.tar.gz’
+
+go1.24.2.linux-arm6 100%[===================>]  71.30M  3.20MB/s    in 25s
+
+2025-04-21 02:25:01 (2.85 MB/s) - ‘go1.24.2.linux-arm64.tar.gz’ saved [74762151/                                                                                                                     74762151]
+
+root@hvactest:~# sudo tar -C /usr/local -xzf go1.24.2.linux-arm64.tar.gz
+root@hvactest:~# go version
+bash: go: command not found
+root@hvactest:~# v1 .bashrc
+bash: v1: command not found
+root@hvactest:~# v1 .bashrc
+bash: v1: command not found
+root@hvactest:~# export PATH=$PATH:/usr/local/go/bin
+root@hvactest:~# go version
+go version go1.24.2 linux/arm64
+root@hvactest:~# go install github.com/mww012/infinitive@latest
+go: downloading github.com/mww012/infinitive v0.0.0-20220727160346-9b60265644e2
+go: finding module for package github.com/elazarl/go-bindata-assetfs
+go: finding module for package github.com/sirupsen/logrus
+go: finding module for package github.com/gin-gonic/gin
+go: finding module for package github.com/npat-efault/crc16
+go: downloading github.com/sirupsen/logrus v1.9.3
+go: finding module for package github.com/tarm/serial
+go: downloading github.com/gin-gonic/gin v1.10.0
+go: downloading github.com/elazarl/go-bindata-assetfs v1.0.1
+go: downloading github.com/npat-efault/crc16 v0.0.0-20161013170008-4128ccbe47c3
+go: finding module for package golang.org/x/net/websocket
+go: downloading github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
+go: downloading golang.org/x/net v0.39.0
+go: found github.com/elazarl/go-bindata-assetfs in github.com/elazarl/go-bindata                                                                                                                     -assetfs v1.0.1
+go: found github.com/gin-gonic/gin in github.com/gin-gonic/gin v1.10.0
+go: found github.com/npat-efault/crc16 in github.com/npat-efault/crc16 v0.0.0-20                                                                                                                     161013170008-4128ccbe47c3
+go: found github.com/sirupsen/logrus in github.com/sirupsen/logrus v1.9.3
+go: found github.com/tarm/serial in github.com/tarm/serial v0.0.0-20180830185346                                                                                                                     -98f6abe2eb07
+go: found golang.org/x/net/websocket in golang.org/x/net v0.39.0
+go: downloading golang.org/x/sys v0.32.0
+go: downloading github.com/gin-contrib/sse v0.1.0
+go: downloading github.com/mattn/go-isatty v0.0.20
+go: downloading github.com/go-playground/validator/v10 v10.20.0
+go: downloading github.com/pelletier/go-toml/v2 v2.2.2
+go: downloading github.com/ugorji/go/codec v1.2.12
+go: downloading gopkg.in/yaml.v3 v3.0.1
+go: downloading google.golang.org/protobuf v1.34.1
+go: downloading github.com/gabriel-vasile/mimetype v1.4.3
+go: downloading github.com/leodido/go-urn v1.4.0
+go: downloading github.com/go-playground/universal-translator v0.18.1
+go: downloading golang.org/x/crypto v0.37.0
+go: downloading golang.org/x/text v0.24.0
+go: downloading github.com/go-playground/locales v0.14.1
+root@hvactest:~# ls
+go  go1.24.2.linux-arm64.tar.gz
+root@hvactest:~# cd go
+root@hvactest:~/go# ls
+bin  pkg
+root@hvactest:~/go# cd bin
+root@hvactest:~/go/bin# ls
+infinitive
+root@hvactest:~/go/bin# cd infintive
+bash: cd: infintive: No such file or directory
+root@hvactest:~/go/bin# cd infinitive
+bash: cd: infinitive: Not a directory
+root@hvactest:~/go/bin# cd root
+bash: cd: root: No such file or directory
+root@hvactest:~/go/bin# cd root
+bash: cd: root: No such file or directory
+root@hvactest:~/go/bin# cd
+root@hvactest:~# cd go
+root@hvactest:~/go# cd /root/go/bin
+root@hvactest:~/go/bin# ls
+infinitive
+root@hvactest:~/go/bin# cd /etc/systemd
+root@hvactest:/etc/systemd# cd system
+root@hvactest:/etc/systemd/system# ls
+bluetooth.target.wants                      halt.target.wants
+dbus-fi.w1.wpa_supplicant1.service          multi-user.target.wants
+dbus-org.bluez.service                      network-online.target.wants
+dbus-org.freedesktop.Avahi.service          poweroff.target.wants
+dbus-org.freedesktop.ModemManager1.service  printer.target.wants
+dbus-org.freedesktop.nm-dispatcher.service  reboot.target.wants
+dbus-org.freedesktop.timesync1.service      remote-fs.target.wants
+default.target                              sockets.target.wants
+dev-serial1.device.wants                    sshd.service
+display-manager.service                     sysinit.target.wants
+getty.target.wants                          timers.target.wants
+getty@tty1.service.d                        wayvnc.service.wants
+graphical.target.wants
+root@hvactest:/etc/systemd/system# sudo nano infinitive.service
+root@hvactest:/etc/systemd/system# ls
+bluetooth.target.wants                      halt.target.wants
+dbus-fi.w1.wpa_supplicant1.service          infinitive.service
+dbus-org.bluez.service                      multi-user.target.wants
+dbus-org.freedesktop.Avahi.service          network-online.target.wants
+dbus-org.freedesktop.ModemManager1.service  poweroff.target.wants
+dbus-org.freedesktop.nm-dispatcher.service  printer.target.wants
+dbus-org.freedesktop.timesync1.service      reboot.target.wants
+default.target                              remote-fs.target.wants
+dev-serial1.device.wants                    sockets.target.wants
+display-manager.service                     sshd.service
+getty.target.wants                          sysinit.target.wants
+getty@tty1.service.d                        timers.target.wants
+graphical.target.wants                      wayvnc.service.wants
+root@hvactest:/etc/systemd/system# cd
+root@hvactest:~# systemctl enable infinitive
+Created symlink /etc/systemd/system/multi-user.target.wants/infinitive.service →                                                                                                                      /etc/systemd/system/infinitive.service.
+root@hvactest:~# systemctl start infinitive
+root@hvactest:~# systemctl status infinitive
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: e>
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21>
+    Process: 4017 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev>
+   Main PID: 4017 (code=exited, status=2)
+        CPU: 10ms
+lines 1-6/6 (END)
+● infinitive.service - Infinitive Service
+     Loaded: loaded (/etc/systemd/system/infinitive.service; enabled; preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Mon 2025-04-21 02:42:37 BST; 427ms ago
+    Process: 4017 ExecStart=/root/go/bin/infinitive -httpport=8080 -serial=/dev/ttyUSB0 (code=exited, sta>
+   Main PID: 4017 (code=exited, status=2)
+        CPU: 10ms
