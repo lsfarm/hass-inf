@@ -16,3 +16,4 @@ ls -lha infinitive
 ```
 ./infinitive -httpport=8080 -serial=/dev/ttyACM0
 ```
+4/22/25 - install rpi4 on westFH its at [10.10.15.99:8080](10.10.15.99:8080) also localDNS set to [hvactest.church](hvactest.church:8080)
