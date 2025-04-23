@@ -17,3 +17,6 @@ ls -lha infinitive
 ./infinitive -httpport=8080 -serial=/dev/ttyACM0
 ```
 4/22/25 - install rpi4 on westFH its at [10.10.15.99:8080](10.10.15.99:8080) also localDNS set to [hvactest.church](hvactest.church:8080)
+
+https://community.home-assistant.io/t/need-daikin-wifi-use-the-open-source-faikin-esp32-hardware-instead-of-the-official-wifi-modules/644370
+.
