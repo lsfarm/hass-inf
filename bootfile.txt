@@ -1,0 +1,37 @@
+# /etc/systemd/system/myapp.service
+[Unit]
+Description=My Go App Service
+After=network.target
+
+[Service]
+ExecStart=/home/pi/myapp -httpport=8080 -serial=/dev/ttyACM0
+WorkingDirectory=/home/pi
+Restart=always
+User=pi
+Environment=GO_ENV=production
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+
+
+code on pi:
+
+  GNU nano 7.2              /lib/systemd/system/bootinf.service                        
+[Unit]
+Description=My Sample Service
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/home/pi/infinitive -httpport=8080 -serial=/dev/ttyACM0
+WorkingDirectory=/home/pi
+Restart=always
+User=pi
+Environment=GO_ENV=production
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
