@@ -1,5 +1,5 @@
 1. In use: [ACDrepo](https://github.com/acd/infinitive)
-2. [UpdatedRepo](https://github.com/gogades/hass-infinitive/tree/master)
+2. [UpdatedRepo HA Intergration](https://github.com/gogades/hass-infinitive/tree/master)
   [OriginalRepo](https://github.com/mww012/ha_customcomponents)
   [MQTTRepo](https://github.com/lurgh/infinitive)
   [HAThread](https://community.home-assistant.io/t/carrier-bryant-infinitive-integration/119578/22)
