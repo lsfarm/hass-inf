@@ -3,6 +3,7 @@
   [OriginalRepo](https://github.com/mww012/ha_customcomponents)
   [MQTTRepo](https://github.com/lurgh/infinitive)
   [HAThread](https://community.home-assistant.io/t/carrier-bryant-infinitive-integration/119578/22)
+3. [Installing Go](https://www.e-tinkers.com/2019/06/better-way-to-install-golang-go-on-raspberry-pi/)
 
 ```
 wget -O infinitive https://github.com/acd/infinitive/releases/download/v0.2/infinitive.arm
