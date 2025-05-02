@@ -15,6 +15,10 @@ sudo nano /boot/firmware/config.txt
 enable_uart=1
 ```
 ```
+sudo reboot
+```
+should have ttyS0 in /dev now
+```
 wget -O infinitive https://github.com/acd/infinitive/releases/download/v0.2/infinitive.arm
 ```
 ```
