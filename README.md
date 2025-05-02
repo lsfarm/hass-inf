@@ -56,3 +56,12 @@ WantedBy=multi-user.target
 ```
 sudo chmod 644 /lib/systemd/system/infinitive.service
 ```
+```
+systemctl enable infinitive
+```
+```
+systemctl start infinitive
+```
+```
+systemctl status infinitive
+```
