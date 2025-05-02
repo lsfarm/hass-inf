@@ -4,6 +4,7 @@
   [MQTTRepo](https://github.com/lurgh/infinitive)
   [HAThread](https://community.home-assistant.io/t/carrier-bryant-infinitive-integration/119578/22)
 3. [Installing Go](https://www.e-tinkers.com/2019/06/better-way-to-install-golang-go-on-raspberry-pi/)
+4. [get 485 hat to work](https://forum.openmarine.net/showthread.php?tid=4534)
 
 ```
 wget -O infinitive https://github.com/acd/infinitive/releases/download/v0.2/infinitive.arm
