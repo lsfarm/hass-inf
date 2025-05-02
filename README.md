@@ -1,6 +1,6 @@
 1. In use: [ACDrepo](https://github.com/acd/infinitive)
 2. [UpdatedRepo HA Intergration](https://github.com/gogades/hass-infinitive/tree/master)
-  [OriginalRepo](https://github.com/mww012/ha_customcomponents)
+  [OriginalRepo](https://github.com/mww012/ha_customcomponents) [Will1604Repo](https://github.com/Will1604/infinitive)
   [MQTTRepo](https://github.com/lurgh/infinitive)
   [HAThread](https://community.home-assistant.io/t/carrier-bryant-infinitive-integration/119578/22)
 3. [Installing Go](https://www.e-tinkers.com/2019/06/better-way-to-install-golang-go-on-raspberry-pi/)
@@ -16,7 +16,7 @@ chmod +x infinitive
 ls -lha infinitive
 ```
 ```
-./infinitive -httpport=8080 -serial=/dev/ttyACM0
+./infinitive -httpport=8080 -serial=/dev/ttyACM0     ttyS0 
 ```
 4/22/25 - install rpi4 on westFH its at [10.10.15.99:8080](10.10.15.99:8080) also localDNS set to [hvactest.church](hvactest.church:8080)
 4/23/25 - Runs great until terminal is closed. Closing terminal causes [HUD](https://forums.raspberrypi.com/viewtopic.php?t=34073)
