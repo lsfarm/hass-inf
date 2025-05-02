@@ -6,7 +6,9 @@
 3. [Installing Go](https://www.e-tinkers.com/2019/06/better-way-to-install-golang-go-on-raspberry-pi/)
 4. [get 485 hat to work](https://forum.openmarine.net/showthread.php?tid=4534)  ```# Enable UART
 enable_uart=1 ```
-
+```
+sudo nano /boot/firmware/config.txt
+```
 ```
 wget -O infinitive https://github.com/acd/infinitive/releases/download/v0.2/infinitive.arm
 ```
