@@ -38,7 +38,7 @@ Type=simple
 Restart=always
 RestartSec=1
 User=root
-ExecStart=/home/pi/infinitive -httpport=8080 -serial=/dev/ttyUSB0
+ExecStart=/home/pi/infinitive -httpport=8080 -serial=/dev/ttyS0
 [Install]
 WantedBy=multi-user.target
 ```
