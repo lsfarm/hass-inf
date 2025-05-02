@@ -23,26 +23,25 @@ ls -lha infinitive
 4/23/25 - Runs great until terminal is closed. Closing terminal causes [HUD](https://forums.raspberrypi.com/viewtopic.php?t=34073)
 [Trying this](https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/)
 
-Code for boot file:
 
-# /etc/systemd/system/myapp.service
+# Code for boot file:
+```
+sudo nano /lib/systemd/system/infinitive.service
+```
+```
 [Unit]
-Description=My Go App Service
+Description=Infinitive Service
 After=network.target
-
+StartLimitIntervalSec=0
 [Service]
-ExecStart=/home/pi/myapp -httpport=8080 -serial=/dev/ttyACM0
-WorkingDirectory=/home/pi
+Type=simple
 Restart=always
-User=pi
-Environment=GO_ENV=production
-StandardOutput=journal
-StandardError=journal
-
+RestartSec=1
+User=root
+ExecStart=/home/pi/infinitive -httpport=8080 -serial=/dev/ttyUSB0
 [Install]
 WantedBy=multi-user.target
-
-..
-
-pi@hvactest4:~ $ sudo nano /lib/systemd/system/bootinf.service
-pi@hvactest4:~ $ sudo chmod 644 /lib/systemd/system/bootinf.service
+```
+```
+sudo chmod 644 /lib/systemd/system/infinitive.service
+```
