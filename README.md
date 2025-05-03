@@ -35,7 +35,7 @@ ls -lha infinitive
 ./infinitive -httpport=8080 -serial=/dev/ttyACM0     ttyS0 
 ```
 
-# Code for boot file:
+## Code for boot file:
 ```
 sudo nano /lib/systemd/system/infinitive.service
 ```
