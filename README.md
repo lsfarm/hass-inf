@@ -20,7 +20,8 @@ enable_uart=1
 ```
 sudo reboot
 ```
-should have ttyS0 in /dev now
+
+## should have ttyS0 in /dev now Install infinitive:
 ```
 wget -O infinitive https://github.com/acd/infinitive/releases/download/v0.2/infinitive.arm
 ```
@@ -33,8 +34,6 @@ ls -lha infinitive
 ```
 ./infinitive -httpport=8080 -serial=/dev/ttyACM0     ttyS0 
 ```
-
-
 
 # Code for boot file:
 ```
