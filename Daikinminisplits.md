@@ -1,1 +1,1 @@
-[Faikin Install](github.com/revk/ESP32-Faikin)
+[Faikin Install](https://github.com/revk/ESP32-Faikin)
