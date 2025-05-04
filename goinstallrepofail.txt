@@ -1,0 +1,26 @@
+pi@hvactestmqtt:~ $ go version
+go version go1.24.2 linux/arm
+pi@hvactestmqtt:~ $ which go
+/usr/local/go/bin/go
+pi@hvactestmqtt:~ $ ls
+go_installer.sh
+pi@hvactestmqtt:~ $ mkdir golang
+pi@hvactestmqtt:~ $ mkdir golang/src
+pi@hvactestmqtt:~ $ ls
+go_installer.sh  golang
+pi@hvactestmqtt:~ $ go get github.com/lurgh/infinitive
+go: go.mod file not found in current directory or any parent directory.
+        'go get' is no longer supported outside a module.
+        To build and install a command, use 'go install' with a version,
+        like 'go install example.com/cmd@latest'
+        For more information, see https://golang.org/doc/go-get-install-deprecation
+        or run 'go help get' or 'go help install'.
+pi@hvactestmqtt:~ $ go install github.com/lurgh/infinitive
+go: 'go install' requires a version when current directory is not in a module
+        Try 'go install github.com/lurgh/infinitive@latest' to install the latest version
+pi@hvactestmqtt:~ $ go install github.com/lurgh/infinitive@latest
+go: downloading github.com/lurgh/infinitive v0.0.0-20250429202150-ca0e68815004
+go: github.com/lurgh/infinitive@latest: version constraints conflict:
+        github.com/lurgh/infinitive@v0.0.0-20250429202150-ca0e68815004: parsing go.mod:
+        module declares its path as: infinitive
+                but was required as: github.com/lurgh/infinitive
