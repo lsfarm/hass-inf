@@ -42,3 +42,7 @@ cd infinitive
 ```
 go build -o ~/infinitive
 ```
+how to fix VCS?
+```
+go build -buildvcs=false -o ~/infinitive
+```
