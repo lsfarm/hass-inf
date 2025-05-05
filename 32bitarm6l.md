@@ -50,7 +50,7 @@ cd home and make sure it runs:
 ```
 cd && ./infinitive -httpport=8080 -serial=/dev/ttyUSB0
 ```
-## Code for boot file:
+## Code for boot file to run as daemon:
 ```
 sudo nano /lib/systemd/system/infinitive.service
 ```
@@ -75,10 +75,10 @@ WantedBy=multi-user.target
 sudo chmod 644 /lib/systemd/system/infinitive.service
 ```
 ```
-systemctl enable infinitive
+sudo systemctl enable infinitive
 ```
 ```
-systemctl start infinitive
+sudo systemctl start infinitive
 ```
 ```
 systemctl status infinitive
