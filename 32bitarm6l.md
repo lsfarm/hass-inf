@@ -50,3 +50,37 @@ cd home and make sure it runs:
 ```
 cd && ./infinitive -httpport=8080 -serial=/dev/ttyUSB0
 ```
+## Code for boot file:
+```
+sudo nano /lib/systemd/system/infinitive.service
+```
+```
+[Unit]
+Description=Infinitive Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+Environment="MQTTPASS=5678.1234."
+ExecStart=/home/pi/infinitive -httpport=8080 -serial=/dev/ttyUSB0 -mqtt=tcp://mqtt-MQTT.user@192.168.15.15:1883
+
+[Install]
+WantedBy=multi-user.target
+```
+```
+sudo chmod 644 /lib/systemd/system/infinitive.service
+```
+```
+systemctl enable infinitive
+```
+```
+systemctl start infinitive
+```
+```
+systemctl status infinitive
+```
+
