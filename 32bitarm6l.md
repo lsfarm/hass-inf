@@ -48,5 +48,5 @@ go build -buildvcs=false -o ~/infinitive
 ```
 cd home and make sure it runs:
 ```
-cd && ./infinitive -httpport=8080 -serial=/dev/ttyACM0     ttyS0 
+cd && ./infinitive -httpport=8080 -serial=/dev/ttyUSB0
 ```
