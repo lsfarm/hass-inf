@@ -46,11 +46,11 @@ how to fix VCS?
 ```
 go build -buildvcs=false -o ~/infinitive
 ```
-cd home and make sure it runs:
+cd home and make sure it runs: !!careful launching here will dump 38 entities into HA that aren't named right!!
 ```
 cd && ./infinitive -httpport=8080 -serial=/dev/ttyUSB0
 ```
-## Code for boot file to run as daemon:
+## Code for boot file to run as daemon:  !!Name Instance!!
 ```
 sudo nano /lib/systemd/system/infinitive.service
 ```
@@ -66,7 +66,7 @@ Restart=always
 RestartSec=1
 User=root
 Environment="MQTTPASS=5678.1234."
-ExecStart=/home/pi/infinitive -httpport=8080 -serial=/dev/ttyUSB0 -mqtt=tcp://mqtt-MQTT.user@192.168.15.15:1883
+ExecStart=/home/pi/infinitive -httpport=8080 -serial=/dev/ttyUSB0 -instance=Hall_East -mqtt=tcp://MQTT.user@192.168.15.15:1883
 
 [Install]
 WantedBy=multi-user.target
