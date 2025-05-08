@@ -34,7 +34,7 @@ go version
 sudo mkdir src && cd src
 ```
 ```
-git clone https://github.com/lurgh/infinitive.git
+sudo git clone https://github.com/lurgh/infinitive.git
 ```
 ```
 cd infinitive
