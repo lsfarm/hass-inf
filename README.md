@@ -7,7 +7,11 @@ In use: [ACDrepo](https://github.com/acd/infinitive) \
 [get 485 hat to work](https://forum.openmarine.net/showthread.php?tid=4534) \
 4/22/25 - install rpi4 on westFH its at [10.10.15.99:8080](10.10.15.99:8080) also localDNS set to [hvactest.church](hvactest.church:8080)  
 4/23/25 - Runs great until terminal is closed. Closing terminal causes [HUD](https://forums.raspberrypi.com/viewtopic.php?t=34073)
-[Trying this](https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/)   
+[Trying this](https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/)   \
+MQTT listener:
+```
+mosquitto_sub -h 192.168.15.15 -u MQTT.user -P 5678.1234. -t "#" -v
+```
 
 ## Enable RS485 Hat:
 ```
