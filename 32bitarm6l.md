@@ -10,6 +10,14 @@ sudo tar -C /usr/local -xzf $GOLANG
 rm $GOLANG
 unset GOLANG
 ```
+64bit:
+```
+export GOLANG="$(curl -s https://go.dev/dl/ | awk -F[\>\<] '/linux-armv6l/ && !/beta/ {print $5;exit}')"
+wget https://golang.org/dl/$GOLANG
+sudo tar -C /usr/local -xzf $GOLANG
+rm $GOLANG
+unset GOLANG
+```
 ```
 sudo chmod +x go_installer.sh
 ```
