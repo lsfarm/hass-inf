@@ -1,4 +1,8 @@
 ## 32 bit version of this 
+### Update:
+```
+sudo apt install git
+```
 ### Go Install:
 ```
 nano go_installer.sh
