@@ -1,3 +1,5 @@
+https://github.com/jcwillox/hass-template-climate/issues/102
+  
   ```
 # ---->>>> HVAC Infinitive MQTT<<<<----
   - platform: climate_template
