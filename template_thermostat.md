@@ -1,4 +1,5 @@
-https://github.com/jcwillox/hass-template-climate/issues/102
+https://github.com/jcwillox/hass-template-climate/issues/102   \
+https://community.home-assistant.io/t/climate-template-set-temperature-help-required/621852/5
   
   ```
 # ---->>>> HVAC Infinitive MQTT<<<<----
