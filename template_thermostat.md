@@ -30,10 +30,35 @@ https://community.home-assistant.io/t/climate-template-set-temperature-help-requ
     current_humidity_template: "{{ states('sensor.hall_east_indoor_humidity') }}"
 
     set_temperature:
-      - service: input_number.set_value
+      - condition: state
+        entity_id: climate.hall_master
+        state: "cool"
+
+      - service: climate.set_temperature
         data:
-          entity_id: input_number.hvacc_eco_low
-          value: "{{ state_attr('climate.test_thermostat', 'temperature') }}"
+          entity_id:
+            - climate.hall_east
+            - climate.hall_middle
+          target_temp_high: "{{ state_attr('climate.hall_master', 'temperature') | int }}"
+          target_temp_low: 60
+
+      - condition: state
+        entity_id: climate.hall_master
+        state: "heat"
+      - service: climate.set_temperature
+        data:
+          entity_id:
+            - climate.hall_east
+            - climate.hall_middle
+          target_temp_high: 80
+          target_temp_low: "{{ state_attr('climate.hall_master', 'temperature') | int }}"
+    #temperature: "{{ temperature }}"
+    set_fan_mode:
+      - service: input_text.set_value
+        data:
+          entity_id: input_text.hvac_mode_wohnzimmer
+          value: "{{ state_attr('climate.test_thermostat', 'fan_mode') }}"
+
     set_fan_mode:
       - service: input_text.set_value
         data:
