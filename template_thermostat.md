@@ -1,11 +1,11 @@
 https://github.com/jcwillox/hass-template-climate/issues/102   \
 https://community.home-assistant.io/t/climate-template-set-temperature-help-required/621852/5
   
-  ```
-# ---->>>> HVAC Infinitive MQTT<<<<----
+ ```
+  # ---->>>> HVAC Infinitive MQTT<<<<----
   - platform: climate_template
     name: Hall Master
-    unique_id: 9de8f337-3560-4e61-8df8-de8c7778c6f7
+    unique_id: dd8a6da3-3eac-4f22-8b81-734f1eb97efe
     modes:
       - "off"
       - heat_cool
@@ -15,53 +15,49 @@ https://community.home-assistant.io/t/climate-template-set-temperature-help-requ
       #     - "dry"
 
     #     - "fan_only"
+    # set back to default -"auto" -"low" if fan mode errors
     fan_modes:
       - auto
       - low
-      - "medium"
-      - "high"
+      - medium
+      - high
     min_temp: 60
     max_temp: 80
+    target_temperature_high_template: 80
+    target_temperature_low_template: 60
 
-    # get current temp.
     current_temperature_template: "{{ states('sensor.hvacc_hall_east_temp') }}"
-
-    # get current humidity.
     current_humidity_template: "{{ states('sensor.hall_east_indoor_humidity') }}"
 
+    set_hvac_mode:
+      - variables:
+          hall_mode: "{{ states('climate.hall_master') }}"
+      - service: climate.set_hvac_mode
+        data:
+          entity_id:
+            - climate.hall_east
+            - climate.hall_middle
+          hvac_mode: "{{ hall_mode if hall_mode != 'heat/cool' else auto }}"
+
     set_temperature:
-      - condition: state
-        entity_id: climate.hall_master
-        state: "cool"
-
+      - variables:
+          hall_temp: "{{ state_attr('climate.hall_master', 'temperature') | int }}"
+          hall_mode: "{{ states('climate.hall_master') }}"
+          eco_low: "{{ states('input_number.hvacc_eco_low') }}"
+          eco_hi: "{{ states('input_number.hvacc_eco_hi') }}"
       - service: climate.set_temperature
         data:
           entity_id:
             - climate.hall_east
             - climate.hall_middle
-          target_temp_high: "{{ state_attr('climate.hall_master', 'temperature') | int }}"
-          target_temp_low: 60
+          target_temp_high: "{{ hall_temp if hall_mode == 'cool' else eco_hi }}"
+          target_temp_low: "{{ hall_temp if hall_mode == 'heat' else eco_low }}"
 
-      - condition: state
-        entity_id: climate.hall_master
-        state: "heat"
-      - service: climate.set_temperature
+    set_fan_mode:
+      - service: climate.set_fan_mode
         data:
           entity_id:
             - climate.hall_east
             - climate.hall_middle
-          target_temp_high: 80
-          target_temp_low: "{{ state_attr('climate.hall_master', 'temperature') | int }}"
-    #temperature: "{{ temperature }}"
-    set_fan_mode:
-      - service: input_text.set_value
-        data:
-          entity_id: input_text.hvac_mode_wohnzimmer
-          value: "{{ state_attr('climate.test_thermostat', 'fan_mode') }}"
-
-    set_fan_mode:
-      - service: input_text.set_value
-        data:
-          entity_id: input_text.hvac_mode_wohnzimmer
-          value: "{{ state_attr('climate.test_thermostat', 'fan_mode') }}"
+          fan_mode: "{{ state_attr('climate.hall_master', 'fan_mode') }}"
 ```
