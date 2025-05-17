@@ -72,7 +72,8 @@ sudo git clone https://github.com/lurgh/infinitive.git
 ```
 MQQT remove uneeded topics:
 ```
-sudo git clone -b mqtt-remove https://github.com/lsfarm/infinitive.git```
+sudo git clone -b mqtt-remove https://github.com/lsfarm/infinitive.git
+```
 ```
 cd infinitive
 ```
