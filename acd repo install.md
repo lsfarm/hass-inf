@@ -34,3 +34,35 @@ ls -lha infinitive
 ```
 ./infinitive -httpport=8080 -serial=/dev/ttyACM0     ttyS0 
 ```
+
+## Code for boot file:
+```
+sudo nano /lib/systemd/system/infinitive.service
+```
+```
+[Unit]
+Description=Infinitive Service
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/home/pi/infinitive -httpport=8080 -serial=/dev/ttyS0
+[Install]
+WantedBy=multi-user.target
+```
+```
+sudo chmod 644 /lib/systemd/system/infinitive.service
+```
+```
+systemctl enable infinitive
+```
+```
+systemctl start infinitive
+```
+```
+systemctl status infinitive
+```
+
