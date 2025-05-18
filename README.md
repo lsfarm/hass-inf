@@ -104,7 +104,7 @@ Restart=always
 RestartSec=1
 User=root
 Environment="MQTTPASS=5678.1234."
-ExecStart=/home/pi/infinitive -httpport=8080 -serial=/dev/ttyUSB0 -instance=Hall_East -mqtt=tcp://MQTT.user@192.168.15.15:1883
+ExecStart=/home/pi/infinitive -httpport=8080 -serial=/dev/ttyS0 -instance=Hall_East -mqtt=tcp://MQTT.user@192.168.15.15:1883
 
 [Install]
 WantedBy=multi-user.target
