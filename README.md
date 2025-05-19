@@ -119,5 +119,8 @@ sudo systemctl enable infinitive
 sudo systemctl start infinitive
 ```
 ```
+sudo systemctl stop infinitive
+```
+```
 systemctl status infinitive
 ```
