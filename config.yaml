@@ -87,13 +87,15 @@ climate:
 # Sensor to track HVAC cooling time using history_stats
 template:
   - sensor:
-      - name: "HVACc FHallWest State"
-        state: "{{ state_attr('climate.infinitive', 'hvac_action') }}"
-      - name: "HVACc FHallWest Fan"
-        state: "{{ state_attr('climate.infinitive', 'blower_rpm') }}"
-      - name: "HVACc FHallWest SetTemp"
-        state: "{{ state_attr('climate.infinitive', 'temperature') }}"
-        unit_of_measurement: "°F"
+      - name: "HVACc Hall Middle Action"
+        state: "{{ state_attr('climate.hall_middle', 'hvac_action') }}"
+      #      - name: "HVACc FHallWest State"
+      #        state: "{{ state_attr('climate.infinitive', 'hvac_action') }}"
+      #      - name: "HVACc FHallWest Fan"
+      #        state: "{{ state_attr('climate.infinitive', 'blower_rpm') }}"
+      #      - name: "HVACc FHallWest SetTemp"
+      #        state: "{{ state_attr('climate.infinitive', 'temperature') }}"
+      #        unit_of_measurement: "°F"
       - name: "HVACc FHallWest Temp"
         state: "{{ state_attr('climate.infinitive', 'current_temperature') }}"
         unit_of_measurement: "°F"
@@ -113,15 +115,15 @@ template:
         state: "{{ state_attr('climate.class_upstairs', 'hvac_action') }}"
 sensor:
   - platform: history_stats
-    name: "HVACc FHallWest Heating Hours Today"
-    entity_id: sensor.hvacc_fhallwest_state
+    name: "HVACc Hall Middle Heating Hours Today"
+    entity_id: sensor.hvacc_hall_middle_action
     state: "heating"
     type: time
     start: "{{ now().replace(hour=0, minute=0, second=0) }}"
     end: "{{ now() }}"
   - platform: history_stats
-    name: "HVACc FHallWest Cooling Hours Today"
-    entity_id: sensor.hvacc_fhallwest_state
+    name: "HVACc Hall Middle Cooling Hours Today"
+    entity_id: sensor.hvacc_hall_middle_action
     state: "cooling"
     type: time
     start: "{{ now().replace(hour=0, minute=0, second=0) }}"
