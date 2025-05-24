@@ -23,15 +23,8 @@ homeassistant:
 #  - url: /hacsfiles/button-card/button-card.js
 #    type: module
 
-# ---->>>> HVAC Infinitive ACD Repo<<<<----
-# >Fell Hall West
+# ---->>>> HVAC Infinitive MQTT<<<<----
 climate:
-  - platform: infinitive
-    host: 192.168.15.99
-    port: 8080
-  #doesnt seem to work   friendly_name: hvac_fhallwest
-
-  # ---->>>> HVAC Infinitive MQTT<<<<----
   - platform: climate_template
     name: Hall Master
     unique_id: dd8a6da3-3eac-4f22-8b81-734f1eb97efe
@@ -40,11 +33,7 @@ climate:
       - heat_cool
       - cool
       - heat
-      #     - "auto"
-      #     - "dry"
 
-    #     - "fan_only"
-    # set back to default -"auto" -"low" if fan mode errors
     fan_modes:
       - auto
       - low
