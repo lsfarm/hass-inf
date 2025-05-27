@@ -62,6 +62,10 @@ climate:
             - climate.hall_east
             - climate.hall_middle
           hvac_mode: "{{ 'off' if hall_mode == 'dry' else hall_mode if hall_mode != 'heat_cool' else 'auto' }}" #if slaves ever turn off dry -> reset probably isnt working
+      - service: climate.set_hvac_mode
+        data:
+          entity_id: climate.hall_master
+          hvac_mode: "dry"
 
     set_temperature:
       - variables:
@@ -78,6 +82,13 @@ climate:
             - climate.hall_middle
           target_temp_high: "{{ hall_temp if hall_mode == 'cool' else hall_temp_high if hall_mode == 'heat_cool' else eco_hi }}"
           target_temp_low: "{{ hall_temp if hall_mode == 'heat' else hall_temp_low if hall_mode == 'heat_cool' else eco_low }}"
+      - service: climate.set_temperature
+        data:
+          entity_id:
+            - climate.hall_master
+          temperature: "{{ 81 if hall_mode == 'cool' else 59 if hall_mode == 'heat' else 68}}"
+          target_temp_high: 81
+          target_temp_low: 59
 
     set_fan_mode:
       - service: climate.set_fan_mode
