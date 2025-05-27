@@ -33,14 +33,15 @@ climate:
       - heat_cool
       - cool
       - heat
+      - dry
 
     fan_modes:
       - auto
       - low
       - medium
       - high
-    min_temp: 60
-    max_temp: 80
+    min_temp: 59
+    max_temp: 81
     target_temperature_high_template: 80
     target_temperature_low_template: 60
 
@@ -55,7 +56,7 @@ climate:
           entity_id:
             - climate.hall_east
             - climate.hall_middle
-          hvac_mode: "{{ hall_mode if hall_mode != 'heat_cool' else 'auto' }}"
+          hvac_mode: "{{ 'off' if hall_mode == 'dry' else hall_mode if hall_mode != 'heat_cool' else 'auto' }}"
 
     set_temperature:
       - variables:
