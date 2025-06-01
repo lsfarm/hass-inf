@@ -19,6 +19,10 @@ sudo apt update
 ``` 
 sudo apt upgrade
 ```
+TimeZone set:
+```
+sudo raspi-config
+```
 ### Enable RS485 Hat:
 ```
 sudo nano /boot/firmware/config.txt
