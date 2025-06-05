@@ -61,6 +61,7 @@ climate:
           entity_id:
             - climate.hall_east
             - climate.hall_middle
+            - climate.hall_west
           hvac_mode: "{{ 'off' if hall_mode == 'dry' else hall_mode if hall_mode != 'heat_cool' else 'auto' }}" #if slaves ever turn off dry -> reset probably isnt working
       - service: climate.set_hvac_mode
         data:
@@ -80,6 +81,7 @@ climate:
           entity_id:
             - climate.hall_east
             - climate.hall_middle
+            - climate.hall_west
           target_temp_high: "{{ hall_temp if hall_mode == 'cool' else hall_temp_high if hall_mode == 'heat_cool' else eco_hi }}"
           target_temp_low: "{{ hall_temp if hall_mode == 'heat' else hall_temp_low if hall_mode == 'heat_cool' else eco_low }}"
       - service: climate.set_temperature
@@ -96,6 +98,7 @@ climate:
           entity_id:
             - climate.hall_east
             - climate.hall_middle
+            - climate.hall_west
           fan_mode: "{{ state_attr('climate.hall_master', 'fan_mode') }}"
 # config for HVAC run time
 # credit: https://blog.stefandroid.com/2022/11/12/home-assistant-track-heating-cooling.html#:~:text=Home%20Assistant%20doesn%27t%20provide,template%20sensor%20and%20history%20statistics.
@@ -104,8 +107,12 @@ climate:
 # Sensor to track HVAC cooling time using history_stats
 template:
   - sensor:
+      - name: "HVACc Hall West Action"
+        state: "{{ state_attr('climate.hall_west', 'hvac_action') }}"
       - name: "HVACc Hall Middle Action"
         state: "{{ state_attr('climate.hall_middle', 'hvac_action') }}"
+      - name: "HVACc Hall East Action"
+        state: "{{ state_attr('climate.hall_east', 'hvac_action') }}"
       #      - name: "HVACc FHallWest State"
       #        state: "{{ state_attr('climate.infinitive', 'hvac_action') }}"
       #      - name: "HVACc FHallWest Fan"
@@ -113,8 +120,8 @@ template:
       #      - name: "HVACc FHallWest SetTemp"
       #        state: "{{ state_attr('climate.infinitive', 'temperature') }}"
       #        unit_of_measurement: "°F"
-      - name: "HVACc FHallWest Temp"
-        state: "{{ state_attr('climate.infinitive', 'current_temperature') }}"
+      - name: "HVACc HallWest Temp"
+        state: "{{ state_attr('climate.hall_west', 'current_temperature') }}"
         unit_of_measurement: "°F"
       - name: "HVACc HallMiddle Temp"
         #friendly_name: "Hall Middle Temp"
@@ -132,6 +139,20 @@ template:
         state: "{{ state_attr('climate.class_upstairs', 'hvac_action') }}"
 sensor:
   - platform: history_stats
+    name: "HVACc Hall West Heating Hours Today"
+    entity_id: sensor.hvacc_hall_west_action
+    state: "heating"
+    type: time
+    start: "{{ now().replace(hour=0, minute=0, second=0) }}"
+    end: "{{ now() }}"
+  - platform: history_stats
+    name: "HVACc Hall West Cooling Hours Today"
+    entity_id: sensor.hvacc_hall_west_action
+    state: "cooling"
+    type: time
+    start: "{{ now().replace(hour=0, minute=0, second=0) }}"
+    end: "{{ now() }}"
+  - platform: history_stats
     name: "HVACc Hall Middle Heating Hours Today"
     entity_id: sensor.hvacc_hall_middle_action
     state: "heating"
@@ -141,6 +162,20 @@ sensor:
   - platform: history_stats
     name: "HVACc Hall Middle Cooling Hours Today"
     entity_id: sensor.hvacc_hall_middle_action
+    state: "cooling"
+    type: time
+    start: "{{ now().replace(hour=0, minute=0, second=0) }}"
+    end: "{{ now() }}"
+  - platform: history_stats
+    name: "HVACc Hall East Heating Hours Today"
+    entity_id: sensor.hvacc_hall_east_action
+    state: "heating"
+    type: time
+    start: "{{ now().replace(hour=0, minute=0, second=0) }}"
+    end: "{{ now() }}"
+  - platform: history_stats
+    name: "HVACc Hall East Cooling Hours Today"
+    entity_id: sensor.hvacc_hall_east_action
     state: "cooling"
     type: time
     start: "{{ now().replace(hour=0, minute=0, second=0) }}"
