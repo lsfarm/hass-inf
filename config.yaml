@@ -102,7 +102,7 @@ climate:
           fan_mode: "{{ state_attr('climate.hall_master', 'fan_mode') }}"
 
   - platform: climate_template
-    name: San
+    name: Sanctuary West
     unique_id: 5222c022-3ee4-419d-afb7-4b42471bc3d7
     modes:
       - "off"
@@ -114,6 +114,8 @@ climate:
       - low
       - medium
       - high
+    hvac_mode_template: "{{ states('climate.hall_east') if states('climate.hall_east') != 'auto' else 'heat_cool' }}"
+    #hvac_mode_template: "{{ states('climate.hall_east') }}"
     min_temp: 59
     max_temp: 81
     target_temperature_high_template: 80
@@ -123,20 +125,19 @@ climate:
     current_humidity_template: "{{ states('sensor.hall_east_indoor_humidity') }}"
 
     set_hvac_mode:
-      #- variables:
-      #   san_mode: "{{ states('climate.sanctuarywest') }}"
+      - variables:
+          san_mode: "{{ states('climate.sanctuary_west') }}"
       - service: climate.set_hvac_mode
         data:
           entity_id: climate.hall_east
-          hvac_mode: "{{ states('climate.san') }}"
-          #hvac_mode: "{{ hall_mode if hall_mode != 'heat_cool' else 'auto' }}"
+          hvac_mode: "{{ san_mode if san_mode != 'heat_cool' else 'auto' }}"
 
     set_temperature:
       - variables:
-          hall_temp: "{{ state_attr('climate.sanctuarywest', 'temperature') | int(0) }}"
-          hall_temp_low: "{{ state_attr('climate.sanctuarywest', 'target_temp_low') | int(0) }}"
-          hall_temp_high: "{{ state_attr('climate.sanctuarywst', 'target_temp_high') | int(0) }}"
-          hall_mode: "{{ states('climate.sanctuarywest') }}"
+          hall_temp: "{{ state_attr('climate.sanctuary_west', 'temperature') | int(0) }}"
+          hall_temp_low: "{{ state_attr('climate.sanctuary_west', 'target_temp_low') | int(0) }}"
+          hall_temp_high: "{{ state_attr('climate.sanctuary_west', 'target_temp_high') | int(0) }}"
+          hall_mode: "{{ states('climate.sanctuary_west') }}"
           eco_low: "{{ states('input_number.hvacc_eco_low') }}"
           eco_hi: "{{ states('input_number.hvacc_eco_hi') }}"
       - service: climate.set_temperature
@@ -149,7 +150,7 @@ climate:
       - service: climate.set_fan_mode
         data:
           entity_id: climate.hall_east
-          fan_mode: "{{ state_attr('climate.sanctuarywest', 'fan_mode') }}"
+          fan_mode: "{{ state_attr('climate.sanctuary_west', 'fan_mode') }}"
 
 # config for HVAC run time
 # credit: https://blog.stefandroid.com/2022/11/12/home-assistant-track-heating-cooling.html#:~:text=Home%20Assistant%20doesn%27t%20provide,template%20sensor%20and%20history%20statistics.
