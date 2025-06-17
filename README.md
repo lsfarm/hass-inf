@@ -78,6 +78,10 @@ MQQT remove uneeded topics:
 ```
 sudo git clone -b mqtt-remove https://github.com/lsfarm/infinitive.git
 ```
+fanMode = Medium:
+```
+sudo git clone -b fanMode https://github.com/lsfarm/infinitive.git
+```
 ```
 cd infinitive
 ```
